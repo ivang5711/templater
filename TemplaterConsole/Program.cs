@@ -2,9 +2,10 @@
 using TemplaterLibrary;
 
 var doc = new HtmlDocument();
-doc.Load(@"C:\Users\Smith\source\repos\ivang5711\templater\data.json");
+doc.Load(args[1]);
 string jsonData = doc.Text;
-var template = File.ReadAllText(@"C:\Users\Smith\source\repos\ivang5711\templater\template.html");
+var template = File.ReadAllText(args[0]);
 Templater templater = new();
 string result = templater.CreateHtml(template, jsonData);
-Console.WriteLine(result);
+//Console.WriteLine(result);
+File.WriteAllText(args[2], result);

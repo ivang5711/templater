@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TemplaterConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Smith\\source\\repos\\ivang5711\\templater\\template.html C:\\Users\\Smith\\source\\repos\\ivang5711\\templater\\data.json C:\\Users\\Smith\\source\\repos\\ivang5711\\templater\\result.html"
+    }
+  }
+}
