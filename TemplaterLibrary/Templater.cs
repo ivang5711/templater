@@ -14,6 +14,12 @@ namespace TemplaterLibrary
 
         private TemplateContext _context;
 
+        /// <summary>
+        /// Generates HTML based on the provided template and data
+        /// </summary>
+        /// <param name="template"></param>
+        /// <param name="jsonData"></param>
+        /// <returns>returns HTML as a single string</returns>
         public string CreateHtml(string template, string jsonData)
         {
             if (!ParseTemplate(template))
