@@ -5,7 +5,10 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplaterLibrary", "TemplaterLibrary\TemplaterLibrary.csproj", "{3E44EDC0-A1BB-40CD-8C1B-94E8E89F30BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplaterConsole", "TemplaterConsole\TemplaterConsole.csproj", "{7C8D814D-7099-4D5D-980E-A42838E1D3B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplaterConsole", "TemplaterConsole\TemplaterConsole.csproj", "{7C8D814D-7099-4D5D-980E-A42838E1D3B5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E44EDC0-A1BB-40CD-8C1B-94E8E89F30BD} = {3E44EDC0-A1BB-40CD-8C1B-94E8E89F30BD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
