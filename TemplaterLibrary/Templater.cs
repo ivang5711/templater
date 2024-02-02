@@ -6,6 +6,8 @@ namespace TemplaterLibrary
 {
     public class Templater
     {
+        private const string templateValueName = "products";
+
         private IFluidTemplate _templateParsed;
 
         private JsonData _data;
@@ -14,17 +16,31 @@ namespace TemplaterLibrary
 
         public string CreateHtml(string template, string jsonData)
         {
-            ParseTemplate(template);
+            if (!ParseTemplate(template))
+            {
+                return string.Empty;
+            }
+
             GetData(jsonData);
-            SetTemplateContext();
+            SetUpTemplate();
             return _templateParsed.Render(_context);
+        }
+
+        private void SetUpTemplate()
+        {
+            SetTemplateOptions();
+            SetTemplateContext();
         }
 
         private void SetTemplateContext()
         {
             _context = new TemplateContext(new Product());
+            _context.SetValue(templateValueName, _data.products);
+        }
+
+        private static void SetTemplateOptions()
+        {
             TemplateOptions.Default.Trimming = TrimmingFlags.TagLeft;
-            _context.SetValue("products", _data.products);
         }
 
         private void GetData(string jsonData)
@@ -32,10 +48,10 @@ namespace TemplaterLibrary
             _data = JsonConvert.DeserializeObject<JsonData>(jsonData);
         }
 
-        private void ParseTemplate(string template)
+        private bool ParseTemplate(string template)
         {
             FluidParser parser = new FluidParser();
-            parser.TryParse(template, out _templateParsed);
+            return parser.TryParse(template, out _templateParsed);
         }
     }
 }

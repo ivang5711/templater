@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.58" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TemplaterLibrary\TemplaterLibrary.csproj" />
   </ItemGroup>
 
