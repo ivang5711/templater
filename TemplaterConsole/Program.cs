@@ -57,4 +57,4 @@ catch (IOException)
     return;
 }
 
-Console.WriteLine(result);
+Console.WriteLine($"Results saved to file: {args[2]}");
