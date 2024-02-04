@@ -4,7 +4,7 @@
     {
         public string name = string.Empty;
 
-        public long price;
+        public string price;
 
         public string description = string.Empty;
     }

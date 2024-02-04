@@ -1,5 +1,6 @@
 ﻿using Fluid;
 using Newtonsoft.Json;
+using System;
 using TemplaterLibrary.Models;
 
 namespace TemplaterLibrary
@@ -28,8 +29,17 @@ namespace TemplaterLibrary
             }
 
             GetData(jsonData);
+            UpdateData();
             SetUpTemplate();
             return _templateParsed.Render(_context);
+        }
+
+        private void UpdateData()
+        {
+            foreach (var product in _data.products)
+            {
+                product.price = "$" + product.price;
+            }
         }
 
         private void SetUpTemplate()
